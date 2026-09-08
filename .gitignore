@@ -1,6 +1,7 @@
 /composer.lock
 .idea/
 .cache/
+./.env
 *.iml
 *.ipr
 *.iws
