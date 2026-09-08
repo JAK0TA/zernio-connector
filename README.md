@@ -9,6 +9,7 @@ Add local user, uid and gid to .env file.
 Run
 
 ```Shell
+git update-index --assume-unchanged ./.env
 docker compose --env-file ./.env --project-name 'dev' run --rm --remove-orphans tools composer install
 ```
 
