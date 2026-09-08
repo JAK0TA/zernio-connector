@@ -1,0 +1,14 @@
+/composer.lock
+.idea/
+.cache/
+*.iml
+*.ipr
+*.iws
+/vendor
+/public
+
+# System Files
+.DS_Store
+Thumbs.db
+.cache
+*.secret

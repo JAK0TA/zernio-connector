@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2"
+	xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="messages" date="2026-08-25T00:00:00Z" product-name="zernio-connector">
+		<header />
+		<body>
+			<trans-unit id="socialmedia.extension.accessToken" resname="socialmedia.extension.accessToken">
+				<source>Zernio Accesstoken</source>
+			</trans-unit>
+			<trans-unit id="socialmedia.extension.profileId" resname="socialmedia.extension.profileId">
+				<source>Zernio Profile ID</source>
+			</trans-unit>
+			<trans-unit id="socialmedia.extension.platforms" resname="socialmedia.extension.platforms">
+				<source>Platforms, comma separated</source>
+			</trans-unit>
+			<trans-unit id="socialmedia.extension.limit" resname="socialmedia.extension.limit">
+				<source>Amount of Posts per Platform</source>
+			</trans-unit>
+			<trans-unit id="socialmedia.extension.storagePId" resname="socialmedia.extension.storagePId">
+				<source>Post Storage Pid</source>
+			</trans-unit>
+			<trans-unit id="socialmedia.extension.description" resname="socialmedia.extension.description">
+				<source>Task to retrieve and display the latest social media posts</source>
+			</trans-unit>
+			<trans-unit id="socialmedia.task.title" resname="socialmedia.task.title">
+				<source>Import SocialMedia</source>
+			</trans-unit>
+			<trans-unit id="socialmedia.task.description" resname="socialmedia.task.description">
+				<source>Import current SocialMedia Posts</source>
+			</trans-unit>
+			<trans-unit id="socialmedia.post" resname="socialmedia.post">
+				<source>Post</source>
+			</trans-unit>
+			<trans-unit id="socialmedia.content" resname="socialmedia.content">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="socialmedia.type" resname="socialmedia.type">
+				<source>Platform Type</source>
+			</trans-unit>
+			<trans-unit id="socialmedia.link" resname="socialmedia.link">
+				<source>Link to original Post</source>
+			</trans-unit>
+			<trans-unit id="socialmedia.publish_date" resname="socialmedia.publish_date">
+				<source>Publish Date</source>
+			</trans-unit>
+			<trans-unit id="socialmedia.media" resname="socialmedia.media">
+				<source>Post Image</source>
+			</trans-unit>
+			<trans-unit id="socialmedia.post_id" resname="socialmedia.post_id">
+				<source>Post ID</source>
+			</trans-unit>
+			<trans-unit id="socialmedia.crdate" resname="socialmedia.crdate">
+				<source>Creation Cate (internal)</source>
+			</trans-unit>
+			<trans-unit id="socialmedia.likes" resname="socialmedia.likes">
+				<source>Likes</source>
+			</trans-unit>
+			<trans-unit id="socialmedia.comments" resname="socialmedia.comments">
+				<source>Comments</source>
+			</trans-unit>
+			<trans-unit id="socialmedia.go_to_post" resname="socialmedia.go_to_post">
+				<source>Go to Post</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

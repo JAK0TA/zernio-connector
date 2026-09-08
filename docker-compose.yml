@@ -1,0 +1,32 @@
+# Docker image for TYPO3 CMS
+# Copyright JAKOTA Design Group GmbH. All rights reserved.
+
+services:
+  tools:
+    container_name: phpVersion-8.4-tools
+    image: php-version-8.4-tools
+    build:
+      context: "./docker/"
+      dockerfile: "Dockerfile-tools"
+      args:
+        phpversion: "${PHP_VERSION}"
+        username: "${USERNAME}"
+        uid: "${UID}"
+        gid: "${GID}"
+        t3context: "${T3CONTEXT}"
+        timezone: "${TIMEZONE}"
+    environment:
+      - PHP_VERSION=${PHP_VERSION}
+      - TZ=${TIMEZONE}
+      - PHP_EXTENSION_XDEBUG=1
+      - TYPO3_CONTEXT=${T3CONTEXT}
+    volumes:
+      - ./:/var/www
+      - /var/folders:/var/folders
+    working_dir: /var/www
+    networks:
+      - backend
+    profiles:
+      - devtools
+networks:
+  backend:

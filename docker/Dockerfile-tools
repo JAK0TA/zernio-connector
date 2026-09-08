@@ -1,0 +1,61 @@
+# Docker image for TYPO3 CMS
+# Copyright JAKOTA Design Group GmbH. All rights reserved.
+
+#Download base image ubuntu 24.04
+FROM ubuntu:24.04
+LABEL maintainer="Thomas Lueder <lueder@jakota.de>"
+LABEL version="0.8"
+LABEL description="This is custom Docker Image for the Typo3 Setup."
+
+# Disable Prompt During Packages Installation
+ARG DEBIAN_FRONTEND=noninteractive
+ARG phpversion
+ARG username
+ARG uid
+ARG gid
+ARG t3context
+ARG timezone
+
+# Define the ENV variable
+ENV php_typo3_cli_conf /etc/php/$phpversion/cli/conf.d/99-typo3.ini
+ENV php_typo3_fpm_conf /etc/php/$phpversion/fpm/conf.d/99-typo3.ini
+ENV php_xdebug_fpm_conf /etc/php/$phpversion/fpm/conf.d/99-xdebug.ini
+
+RUN (groupadd --gid $gid "$username" || groupadd "$username" || true) && \
+    (useradd  -l -m -s "/bin/bash" --gid "$username" --comment '' --uid $uid "$username" || useradd  -l -m -s "/bin/bash" --gid "$username" --comment '' "$username" || useradd  -l -m -s "/bin/bash" --gid "$gid" --comment '' "$username")
+
+# Update Ubuntu Software repository
+RUN apt-get update -y && \
+    apt-get install -y software-properties-common && \
+    add-apt-repository -y universe && \
+    add-apt-repository -y ppa:ondrej/php && \
+    apt update -y && \
+    apt dist-upgrade -y
+
+# Install php-fpm from ubuntu repository
+RUN apt-get install -y graphicsmagick lbzip2 mariadb-client ssh sshpass rsync language-pack-de-base language-pack-de language-pack-gnome-de-base language-pack-gnome-de language-pack-en-base language-pack-en language-pack-gnome-en-base language-pack-gnome-en locales \
+# nodejs
+        nodejs npm \
+# PHP
+        php$phpversion-apcu php$phpversion-imagick php$phpversion-bcmath php$phpversion-bz2 php$phpversion-cli php$phpversion-curl php$phpversion-fpm php$phpversion-gd php$phpversion-imap php$phpversion-intl php$phpversion-mbstring php$phpversion-mysql php$phpversion-pspell php$phpversion-snmp php$phpversion-soap php$phpversion-sqlite3 php$phpversion-tidy php$phpversion-xdebug php$phpversion-xml php$phpversion-xmlrpc php$phpversion-zip && \
+# Clean Up
+    rm -rf /var/lib/apt/lists/* && \
+    apt clean
+
+# Set Timezone
+RUN ln -fs /usr/share/zoneinfo/$timezone /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
+
+# Copy php configuration
+COPY php/99-typo3.ini ${php_typo3_cli_conf}
+COPY php/99-typo3.ini ${php_typo3_fpm_conf}
+COPY php/99-xdebug.ini ${php_xdebug_fpm_conf}
+
+RUN sed -i "s/user = www-data/user = $username/" /etc/php/$phpversion/fpm/pool.d/www.conf
+RUN sed -i "s/group = www-data/group = $uid/" /etc/php/$phpversion/fpm/pool.d/www.conf
+
+RUN mkdir -p /run/php && rm -fr /var/www/ && mkdir -p /var/www/
+
+RUN ln -sf /usr/bin/php$phpversion /etc/alternatives/php
+
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php && php -r "unlink('composer-setup.php');" && mv composer.phar /usr/local/bin/composer
+

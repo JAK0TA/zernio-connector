@@ -1,0 +1,15 @@
+# cat=basic//; type=string; label=LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.accessToken
+accessToken =
+
+# cat=basic//; type=string; label=LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.profileId
+profileId =
+
+# cat=basic//; type=string; label=LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.platforms
+platforms =
+
+# cat=basic//; type=string; label=LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.limit
+limit =
+
+# cat=basic//; type=string; label=LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.storagePId
+storagePId =
+

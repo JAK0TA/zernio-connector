@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+  <f:if condition="{settings.template}=='start'">
+    <f:then></f:then>
+    <f:else></f:else>
+  </f:if>
+  <f:for each="{posts}" as="post">
+    <div>
+      <p>{post.type}</p>
+      <p>{post.content}</p>
+      <p><f:format.date format="%A, %d.%m.%Y">{post.publishDate}</f:format.date></p>
+      <f:if condition="{post.media}">
+        <f:image image="{post.media}" alt="" />
+      </f:if>
+      <f:if condition="{post.likes} > 0">
+        <p>{post.likes}</p>
+      </f:if>
+      <f:if condition="{post.comments} > 0">
+        <p>{post.comments}</p>
+      </f:if>
+      <a href="{post.link}" target="_blank"><f:translate key="LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.go_to_post" /> ></a>
+    </div>
+  </f:for>
+</html>

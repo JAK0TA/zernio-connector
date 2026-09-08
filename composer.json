@@ -1,0 +1,52 @@
+{
+  "name": "jakota/zernio-connector",
+  "type": "typo3-cms-extension",
+  "description": "Zernio Connector - Task to get social media post from all platform supported by Zernio.com",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Julia Saurin",
+      "email": "saurin@jakota.de",
+      "role": "Developer"
+    },
+    {
+      "name": "Thomas Lüder",
+      "email": "lueder@jakota.de",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/JAK0TA/zernio-connector/issues",
+    "source": "https://github.com/JAK0TA/zernio-connector"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "typo3/class-alias-loader": true,
+      "typo3/cms-composer-installers": true
+    }
+  },
+  "require": {
+    "php": "^8.4",
+    "typo3/cms-core": "^13.4",
+    "typo3/cms-scheduler": "^13.4",
+    "zernio-dev/zernio-php": "^0.0.547"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3",
+    "helmich/typo3-typoscript-lint": "^3",
+    "phpstan/phpstan": "^2",
+    "saschaegerer/phpstan-typo3": "^3",
+    "typo3/testing-framework": "^9.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "JAKOTA\\ZernioConnector\\": "Classes/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "zernio-connector"
+    }
+  }
+}

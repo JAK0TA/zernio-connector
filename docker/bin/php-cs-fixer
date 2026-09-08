@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+$command = '';
+
+for ($i = 1; $i < $argc; ++$i) {
+  if (str_starts_with($argv[$i], '--config=')) {
+    $command .= '--config=/var/www/.vscode/.php-cs-fixer.php ';
+  } else {
+    $command .= $argv[$i].' ';
+  }
+}
+
+echo shell_exec("/usr/local/bin/docker compose --env-file ".__DIR__."../../../.env --project-name 'dev' run --rm --remove-orphans tools ./vendor/bin/php-cs-fixer ".$command);

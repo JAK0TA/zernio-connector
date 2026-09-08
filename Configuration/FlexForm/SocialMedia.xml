@@ -1,0 +1,33 @@
+<T3DataStructure>
+  <meta>
+    <langDisable>1</langDisable>
+  </meta>
+  <sheets>
+    <main>
+      <ROOT>
+        <sheetTitle>Einstellungen</sheetTitle>
+        <type>array</type>
+        <el>
+          <settings.template>
+            <label>Template</label>
+            <config>
+              <type>select</type>
+              <renderType>selectSingle</renderType>
+              <items type="array">
+                <numIndex index="0" type="array">
+                  <numIndex index="0">Startseite</numIndex>
+                  <numIndex index="1">start</numIndex>
+                </numIndex>
+                <numIndex index="1" type="array">
+                  <numIndex index="0">SocialMedia Wall</numIndex>
+                  <numIndex index="1">wall</numIndex>
+                </numIndex>
+              </items>
+              <size>1</size>
+            </config>
+          </settings.template>
+        </el>
+      </ROOT>
+    </main>
+  </sheets>
+</T3DataStructure>
