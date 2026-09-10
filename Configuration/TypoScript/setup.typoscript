@@ -1,0 +1,7 @@
+plugin.tx_zernio-connector {
+  view {
+    templateRootPaths {
+      10 = EXT:zernio-connector/Resources/Private/Templates/
+    }
+  }
+}
