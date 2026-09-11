@@ -91,7 +91,7 @@ class ImportSocialMediaTask extends AbstractTask {
         continue;
       }
 
-      $zernioPosts = $zernioPostApi->listPosts(limit: $limit, source: 'external', platform: $platform, profile_id: $profileId, sort_by: 'created-desc', include_hidden: false);
+      $zernioPosts = $zernioPostApi->listPosts(limit: $limit, source: 'external', platform: $platform, profile_id: $profileId, sort_by: 'created-desc', include_hidden: 'false');
 
       if (!$zernioPosts instanceof PostsListResponse) {
         continue;
