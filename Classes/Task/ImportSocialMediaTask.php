@@ -134,7 +134,7 @@ class ImportSocialMediaTask extends AbstractTask {
         $mediaHash = null !== $mediaUrl ? md5($mediaUrl) : '';
 
         // Find existing post
-        $this->post = $socialMediaRepository->findBy(['post_id' => $postId])->getFirst();
+        $this->post = $socialMediaRepository->findOneByPostIdIncludingHidden($postId);
 
         // check for Existing post
         if ($this->post instanceof SocialMedia) {
