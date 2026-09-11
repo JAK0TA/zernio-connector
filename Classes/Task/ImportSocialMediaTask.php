@@ -129,7 +129,7 @@ class ImportSocialMediaTask extends AbstractTask {
         $comments = intval($zernioAnalytics->getAnalytics()?->getComments() ?? 0);
 
         // Get media URL
-        $mediaUrl = $this->getMediaUrl($zernioPost);
+        $mediaUrl = $this->getMediaUrl($zernioPost, $type);
 
         $mediaHash = null !== $mediaUrl ? md5($mediaUrl) : '';
 
@@ -223,14 +223,18 @@ class ImportSocialMediaTask extends AbstractTask {
     return $fileReference;
   }
 
-  private function getMediaUrl(Post $zernioPost): ?string {
+  private function getMediaUrl(Post $zernioPost, string $type): ?string {
     $mediaItems = $zernioPost->getMediaItems();
 
     if (empty($mediaItems)) {
       return null;
     }
 
-    $url = $mediaItems[0]->getThumbnail();
+    if ('youtube' == $type) {
+      $url = $mediaItems[0]->getUrl();
+    } else {
+      $url = $mediaItems[0]->getThumbnail();
+    }
 
     if (!is_string($url) || '' === $url) {
       return null;
