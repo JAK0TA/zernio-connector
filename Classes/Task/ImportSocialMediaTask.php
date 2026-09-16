@@ -80,7 +80,8 @@ class ImportSocialMediaTask extends AbstractTask {
     $accessToken = strval($extConf['accessToken']);
 
     // Zernio API
-    $zernioConfig = Configuration::getDefaultConfiguration()->setAccessToken($accessToken);
+    $zernioConfig = Configuration::getDefaultConfiguration()->setAccessToken($accessToken)->setBooleanFormatForQueryString('string');
+
     $zernioPostApi = new PostsApi(new Client(), $zernioConfig);
     $zernioAnalyticsApi = new AnalyticsApi(new Client(), $zernioConfig);
 
