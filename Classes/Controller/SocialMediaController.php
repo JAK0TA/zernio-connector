@@ -24,7 +24,7 @@ class SocialMediaController extends ActionController {
       ]);
     }
 
-    $this->view->assign('posts', $postsByPlatform);
+    $this->view->assign('platforms', $postsByPlatform);
 
     return $this->htmlResponse();
   }
