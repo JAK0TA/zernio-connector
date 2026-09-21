@@ -13,7 +13,18 @@ class SocialMediaController extends ActionController {
   public function __construct(protected SocialMediaRepository $socialMediaRepository) {}
 
   public function listAction(): ResponseInterface {
-    $this->view->assign('posts', $this->socialMediaRepository->findAll());
+    $platform = $this->settings['platform'] ?? '';
+
+    $platforms = array_map('trim', explode(',', $platform));
+    $postsByPlatform = [];
+
+    foreach ($platforms as $platform) {
+      $postsByPlatform[$platform] = $this->socialMediaRepository->findBy([
+        'type' => $platform,
+      ]);
+    }
+
+    $this->view->assign('platforms', $postsByPlatform);
 
     return $this->htmlResponse();
   }
