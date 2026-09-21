@@ -26,6 +26,14 @@
               <size>1</size>
             </config>
           </settings.template>
+          <settings.platform>
+            <label>LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.platformselect</label>
+            <config>
+              <type>select</type>
+              <renderType>selectMultipleSideBySide</renderType>
+              <itemsProcFunc>JAKOTA\ZernioConnector\Utility\PlatformItemsProcFunc->getItems</itemsProcFunc>
+            </config>
+          </settings.platform>
         </el>
       </ROOT>
     </main>
