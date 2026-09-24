@@ -15,11 +15,11 @@
               <renderType>selectSingle</renderType>
               <items type="array">
                 <numIndex index="0" type="array">
-                  <numIndex index="0">Startseite</numIndex>
+                  <numIndex index="0">LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.start</numIndex>
                   <numIndex index="1">start</numIndex>
                 </numIndex>
                 <numIndex index="1" type="array">
-                  <numIndex index="0">SocialMedia Wall</numIndex>
+                  <numIndex index="0">LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.socialwall</numIndex>
                   <numIndex index="1">wall</numIndex>
                 </numIndex>
               </items>
