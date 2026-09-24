@@ -64,6 +64,12 @@
       <trans-unit id="socialmedia.extension.platformselect" resname="socialmedia.extension.platformselect">
         <source>Show Platforms</source>
       </trans-unit>
+      <trans-unit id="socialmedia.extension.start" resname="socialmedia.extension.start">
+        <source>Startpage</source>
+      </trans-unit>
+      <trans-unit id="socialmedia.extension.socialwall" resname="socialmedia.extension.socialwall">
+        <source>Social Wall</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

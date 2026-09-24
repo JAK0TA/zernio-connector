@@ -84,6 +84,14 @@
         <source>Show Platforms</source>
         <target>Zeige Plattformen</target>
       </trans-unit>
+      <trans-unit id="socialmedia.extension.start" resname="socialmedia.extension.start">
+        <source>Startpage</source>
+        <target>Startseite</target>
+      </trans-unit>
+      <trans-unit id="socialmedia.extension.socialwall" resname="socialmedia.extension.socialwall">
+        <source>Social Wall</source>
+        <target>Social Wall</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
