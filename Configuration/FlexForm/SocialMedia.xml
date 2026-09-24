@@ -33,6 +33,7 @@
               <size>20</size>
               <max>30</max>
               <eval>trim</eval>
+              <default>4</default>
             </config>
           </settings.amount>
           <settings.platform>
