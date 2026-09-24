@@ -24,4 +24,19 @@ class SocialMediaRepository extends Repository {
 
     return $query->execute();
   }
+
+  public function findOneByPostIdIncludingHidden(string $postId): ?SocialMedia {
+    $query = $this->createQuery();
+
+    $query->getQuerySettings()->setIgnoreEnableFields(true);
+
+    return $query
+      ->matching(
+        $query->equals('post_id', $postId)
+      )
+      ->setLimit(1)
+      ->execute()
+      ->getFirst()
+    ;
+  }
 }
