@@ -64,6 +64,9 @@
       <trans-unit id="socialmedia.extension.platformselect" resname="socialmedia.extension.platformselect">
         <source>Show Platforms</source>
       </trans-unit>
+      <trans-unit id="socialmedia.extension.template.slider" resname="socialmedia.extension.template.slider">
+        <source>Slider per Platform</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

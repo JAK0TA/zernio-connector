@@ -22,6 +22,10 @@
                   <numIndex index="0">SocialMedia Wall</numIndex>
                   <numIndex index="1">wall</numIndex>
                 </numIndex>
+                <numIndex index="2" type="array">
+                  <numIndex index="0">LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.template.slider</numIndex>
+                  <numIndex index="1">slider</numIndex>
+                </numIndex>
               </items>
               <size>1</size>
             </config>

@@ -84,6 +84,10 @@
         <source>Show Platforms</source>
         <target>Zeige Plattformen</target>
       </trans-unit>
+      <trans-unit id="socialmedia.extension.template.slider" resname="socialmedia.extension.template.slider">
+        <source>Slider per Platform</source>
+        <target>Slider pro Plattform</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
