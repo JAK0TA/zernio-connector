@@ -70,6 +70,9 @@
       <trans-unit id="socialmedia.extension.socialwall" resname="socialmedia.extension.socialwall">
         <source>Social Wall</source>
       </trans-unit>
+      <trans-unit id="socialmedia.extension.amount" resname="socialmedia.extension.amount">
+        <source>Amount of Posts on the Startpage</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

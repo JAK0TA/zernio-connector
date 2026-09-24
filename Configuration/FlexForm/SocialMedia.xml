@@ -26,6 +26,16 @@
               <size>1</size>
             </config>
           </settings.template>
+          <settings.amount>
+            <label>LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.amount</label>
+            <config>
+              <type>input</type>
+              <size>20</size>
+              <max>30</max>
+              <eval>trim</eval>
+              <default>4</default>
+            </config>
+          </settings.amount>
           <settings.platform>
             <label>LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.platformselect</label>
             <config>

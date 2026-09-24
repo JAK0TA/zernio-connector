@@ -92,6 +92,10 @@
         <source>Social Wall</source>
         <target>Social Wall</target>
       </trans-unit>
+      <trans-unit id="socialmedia.extension.amount" resname="socialmedia.extension.amount">
+        <source>Amount of Posts on the Startpage</source>
+        <target>Anzahl der Posts auf der Startseite</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

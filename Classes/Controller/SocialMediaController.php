@@ -14,6 +14,7 @@ class SocialMediaController extends ActionController {
 
   public function listAction(): ResponseInterface {
     $platform = $this->settings['platform'] ?? '';
+    $amount = $this->settings['amount'];
 
     $platforms = array_map('trim', explode(',', $platform));
     $postsByPlatform = [];
@@ -24,7 +25,10 @@ class SocialMediaController extends ActionController {
       ]);
     }
 
-    $this->view->assign('platforms', $postsByPlatform);
+    $this->view->assignMultiple([
+      'platforms' => $postsByPlatform,
+      'amount' => $amount,
+    ]);
 
     return $this->htmlResponse();
   }
