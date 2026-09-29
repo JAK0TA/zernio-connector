@@ -6,6 +6,7 @@ declare(strict_types=1);
 namespace JAKOTA\ZernioConnector\Domain\Repository;
 
 use JAKOTA\ZernioConnector\Domain\Model\SocialMedia;
+use TYPO3\CMS\Extbase\Persistence\Generic\QueryResult;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
@@ -25,18 +26,22 @@ class SocialMediaRepository extends Repository {
     return $query->execute();
   }
 
-  public function findOneByPostIdIncludingHidden(string $postId): ?SocialMedia {
+  public function findByTypeAndMedia(string $platform, int $limit): QueryResult {
     $query = $this->createQuery();
 
-    $query->getQuerySettings()->setIgnoreEnableFields(true);
-
-    return $query
-      ->matching(
-        $query->equals('post_id', $postId)
+    $query->matching(
+      $query->logicalAnd(
+        $query->equals('type', $platform),
+        $query->greaterThan('media', 0)
       )
-      ->setLimit(1)
-      ->execute()
-      ->getFirst()
-    ;
+    );
+
+    $query->setOrderings([
+      'publishDate' => QueryInterface::ORDER_DESCENDING,
+    ]);
+
+    $query->setLimit($limit);
+
+    return $query->execute();
   }
 }
