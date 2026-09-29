@@ -15,8 +15,8 @@ class SocialMediaController extends ActionController {
   public function __construct(protected SocialMediaRepository $socialMediaRepository) {}
 
   public function listAction(): ResponseInterface {
-    $platform = $this->settings['platform'];
-    $template = $this->settings['template'];
+    $platform = $this->settings['platform'] ?? '';
+    $template = $this->settings['template'] ?? '';
 
     $extConf = (array) GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('zernio-connector');
     $limit = intval($extConf['limit']);
