@@ -7,6 +7,7 @@ namespace JAKOTA\ZernioConnector\Domain\Repository;
 
 use JAKOTA\ZernioConnector\Domain\Model\SocialMedia;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
@@ -21,6 +22,28 @@ class SocialMediaRepository extends Repository {
     $query->setOrderings([
       'publish_date' => QueryInterface::ORDER_DESCENDING,
     ]);
+
+    return $query->execute();
+  }
+
+  /**
+   * @return QueryResultInterface<int, SocialMedia>
+   */
+  public function findByTypeAndMedia(string $platform, int $limit): QueryResultInterface {
+    $query = $this->createQuery();
+
+    $query->matching(
+      $query->logicalAnd(
+        $query->equals('type', $platform),
+        $query->greaterThan('media', 0)
+      )
+    );
+
+    $query->setOrderings([
+      'publishDate' => QueryInterface::ORDER_DESCENDING,
+    ]);
+
+    $query->setLimit($limit);
 
     return $query->execute();
   }
