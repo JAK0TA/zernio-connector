@@ -8,17 +8,16 @@ namespace JAKOTA\ZernioConnector\Controller;
 use JAKOTA\ZernioConnector\Domain\Repository\SocialMediaRepository;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 class SocialMediaController extends ActionController {
-  public function __construct(protected SocialMediaRepository $socialMediaRepository) {}
+  public function __construct(protected SocialMediaRepository $socialMediaRepository, protected ExtensionConfiguration $extensionConfiguration) {}
 
   public function listAction(): ResponseInterface {
-    $platform = $this->settings['platform'] ?? '';
-    $template = $this->settings['template'] ?? '';
+    $platform = $this->settings['platform'];
+    $template = $this->settings['template'];
 
-    $extConf = (array) GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('zernio-connector');
+    $extConf = (array) $this->extensionConfiguration->get('zernio-connector');
     $limit = intval($extConf['limit']);
 
     $platforms = array_map('trim', explode(',', $platform));
