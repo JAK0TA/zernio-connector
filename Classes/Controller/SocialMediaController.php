@@ -24,12 +24,13 @@ class SocialMediaController extends ActionController {
     $postsByPlatform = [];
     foreach ($platforms as $platform) {
       if ('start' == $template) {
-        $postsByPlatform[$platform] = $this->socialMediaRepository->findByTypeAndMedia($platform, 2);
-      } else {
-        $postsByPlatform[$platform] = $this->socialMediaRepository->findByTypeAndMedia($platform, $limit);
+        $limit = 3;
+        if ('youtube' == $platform) {
+          $limit = 2;
+        }
       }
+      $postsByPlatform[$platform] = $this->socialMediaRepository->findByTypeAndMedia($platform, $limit);
     }
-
     $this->view->assign('platforms', $postsByPlatform);
 
     return $this->htmlResponse();
