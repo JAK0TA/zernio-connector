@@ -20,6 +20,10 @@
         <source>Amount of Posts per Platform</source>
         <target>Anzahl der Posts pro Plattform</target>
       </trans-unit>
+      <trans-unit id="socialmedia.extension.limitStart" resname="socialmedia.extension.limitStart">
+        <source>Amount of posts to be displayed on the startpage per platform</source>
+        <target>Anzahl der Posts, die pro Plattform auf der Startseite angezeigt werden sollen</target>
+      </trans-unit>
       <trans-unit id="socialmedia.extension.storagePId" resname="socialmedia.extension.storagePId">
         <source>Post Storage Pid</source>
         <target>Post Speicher Pid</target>
