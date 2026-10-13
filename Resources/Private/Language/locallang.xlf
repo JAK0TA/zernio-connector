@@ -74,7 +74,7 @@
         <source>Social Wall</source>
       </trans-unit>
       <trans-unit id="socialmedia.extension.respectSysLanguage" resname="socialmedia.extension.respectSysLanguage">
-        <source>Respect Language (default true)</source>
+        <source>Respect Language (default 1)</source>
       </trans-unit>
     </body>
   </file>
