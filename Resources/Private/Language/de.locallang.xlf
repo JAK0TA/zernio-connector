@@ -96,6 +96,10 @@
         <source>Social Wall</source>
         <target>Social Wall</target>
       </trans-unit>
+      <trans-unit id="socialmedia.extension.respectSysLanguage" resname="socialmedia.extension.respectSysLanguage">
+        <source>Respect Language (default true)</source>
+        <target>Sprache beachten (standard true)</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
