@@ -32,6 +32,8 @@ class SocialMediaRepository extends Repository {
   public function findByTypeAndMedia(string $platform, int $limit): QueryResultInterface {
     $query = $this->createQuery();
 
+    $query->getQuerySettings()->setRespectSysLanguage(false);
+
     $query->matching(
       $query->logicalAnd(
         $query->equals('type', $platform),
