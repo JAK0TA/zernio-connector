@@ -16,7 +16,7 @@ class SocialMediaController extends ActionController {
   public function listAction(): ResponseInterface {
     $platform = $this->settings['platform'];
     $limit = intval($this->settings['limit']);
-    $respectSysLanguage = boolval($this->settings['respectSysLanguage']);
+    $respectSysLanguage = boolval($this->settings['respectSysLanguage'] ?? true);
 
     $platforms = array_map('trim', explode(',', $platform));
     $postsByPlatform = [];
