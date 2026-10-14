@@ -16,10 +16,10 @@ class SocialMediaController extends ActionController {
   public function listAction(): ResponseInterface {
     $platform = $this->settings['platform'];
     $template = $this->settings['template'];
+    $limitStart = intval($this->settings['limitstartpage']);
 
     $extConf = (array) $this->extensionConfiguration->get('zernio-connector');
     $limit = intval($extConf['limit']);
-    $limitStart = intval($extConf['limitStart']);
 
     $platforms = array_map('trim', explode(',', $platform));
     $postsByPlatform = [];
