@@ -21,9 +21,11 @@
             <config>
               <type>input</type>
               <size>10</size>
-              <max>2</max>
               <eval>int</eval>
               <required>true</required>
+              <range>
+                <lower>1</lower>
+              </range>
             </config>
           </settings.limit>
           <settings.platform>
