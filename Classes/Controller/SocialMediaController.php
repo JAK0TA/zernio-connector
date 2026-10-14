@@ -14,8 +14,8 @@ class SocialMediaController extends ActionController {
   public function __construct(protected SocialMediaRepository $socialMediaRepository, protected ExtensionConfiguration $extensionConfiguration) {}
 
   public function listAction(): ResponseInterface {
-    $platform = $this->settings['platform'];
-    $limit = intval($this->settings['limit']);
+    $platform = $this->settings['platform'] ?? '';
+    $limit = intval($this->settings['limit'] ?? 1);
     $respectSysLanguage = boolval($this->settings['respectSysLanguage'] ?? true);
 
     $platforms = array_map('trim', explode(',', $platform));
