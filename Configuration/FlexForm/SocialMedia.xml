@@ -27,7 +27,7 @@
               <size>1</size>
             </config>
           </settings.template>
-          <settings.startpage>
+          <settings.limitstartpage>
             <label>LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.limitStart</label>
             <displayCond>FIELD:settings.template:=:start</displayCond>
             <config>
@@ -36,7 +36,7 @@
               <max>30</max>
               <eval>trim</eval>
             </config>
-          </settings.startpage>
+          </settings.limitstartpage>
           <settings.platform>
             <label>LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.platformselect</label>
             <config>
