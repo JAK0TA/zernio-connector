@@ -18,7 +18,7 @@
       </trans-unit>
       <trans-unit id="socialmedia.extension.zerniolimit" resname="socialmedia.extension.zerniolimit">
         <source>Limit for Zernio API Call (per Platform)</source>
-        <target>Limit für den Zernio API Call (pro Palttform)</target>
+        <target>Limit für den Zernio API Call (pro Plattform)</target>
       </trans-unit>
       <trans-unit id="socialmedia.extension.limit" resname="socialmedia.extension.limit">
         <source>Amount of posts to be displayed </source>
