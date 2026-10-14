@@ -16,6 +16,7 @@ class SocialMediaController extends ActionController {
   public function listAction(): ResponseInterface {
     $platform = $this->settings['platform'];
     $limit = intval($this->settings['limit']);
+    $respectSysLanguage = boolval($this->settings['respectSysLanguage']);
 
     $platforms = array_map('trim', explode(',', $platform));
     $postsByPlatform = [];
@@ -23,7 +24,8 @@ class SocialMediaController extends ActionController {
     foreach ($platforms as $platform) {
       $postsByPlatform[$platform] = $this->socialMediaRepository->findByTypeAndMedia(
         $platform,
-        $limit
+        $limit,
+        $respectSysLanguage
       );
     }
 
