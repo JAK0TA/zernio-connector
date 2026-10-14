@@ -15,7 +15,7 @@ class SocialMediaController extends ActionController {
 
   public function listAction(): ResponseInterface {
     $platform = $this->settings['platform'];
-    $limit = intval($this->settings['limit']);
+    $limit = intval($this->settings['limit'] ?? 1);
     $respectSysLanguage = boolval($this->settings['respectSysLanguage'] ?? true);
 
     $platforms = array_map('trim', explode(',', $platform));
