@@ -32,9 +32,8 @@
             <displayCond>FIELD:settings.template:=:start</displayCond>
             <config>
               <type>input</type>
-              <size>20</size>
-              <max>30</max>
-              <eval>trim</eval>
+              <size>10</size>
+              <max>2</max>
             </config>
           </settings.limitstartpage>
           <settings.platform>
