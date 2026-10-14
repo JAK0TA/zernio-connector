@@ -10,6 +10,7 @@
         <el>
           <settings.template>
             <label>Template</label>
+            <onChange>reload</onChange>
             <config>
               <type>select</type>
               <renderType>selectSingle</renderType>
@@ -26,6 +27,16 @@
               <size>1</size>
             </config>
           </settings.template>
+          <settings.startpage>
+            <label>LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.limitStart</label>
+            <displayCond>FIELD:settings.template:=:start</displayCond>
+            <config>
+              <type>input</type>
+              <size>20</size>
+              <max>30</max>
+              <eval>trim</eval>
+            </config>
+          </settings.startpage>
           <settings.platform>
             <label>LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.platformselect</label>
             <config>
