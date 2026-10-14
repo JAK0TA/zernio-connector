@@ -13,19 +13,18 @@
             <config>
               <type>select</type>
               <renderType>selectSingle</renderType>
-              <items type="array">
-                <numIndex index="0" type="array">
-                  <numIndex index="0">LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.start</numIndex>
-                  <numIndex index="1">start</numIndex>
-                </numIndex>
-                <numIndex index="1" type="array">
-                  <numIndex index="0">LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.socialwall</numIndex>
-                  <numIndex index="1">wall</numIndex>
-                </numIndex>
-              </items>
               <size>1</size>
             </config>
           </settings.template>
+          <settings.limit>
+            <label>LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.limit</label>
+            <config>
+              <type>input</type>
+              <size>10</size>
+              <max>2</max>
+              <eval>int</eval>
+            </config>
+          </settings.limit>
           <settings.platform>
             <label>LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.platformselect</label>
             <config>

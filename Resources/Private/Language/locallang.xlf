@@ -13,8 +13,11 @@
       <trans-unit id="socialmedia.extension.platforms" resname="socialmedia.extension.platforms">
         <source>Platforms, comma separated</source>
       </trans-unit>
+      <trans-unit id="socialmedia.extension.zerniolimit" resname="socialmedia.extension.zerniolimit">
+        <source>Limit for Zernio API Call (per Platform)</source>
+      </trans-unit>
       <trans-unit id="socialmedia.extension.limit" resname="socialmedia.extension.limit">
-        <source>Amount of Posts per Platform</source>
+        <source>Amount of posts to be displayed </source>
       </trans-unit>
       <trans-unit id="socialmedia.extension.storagePId" resname="socialmedia.extension.storagePId">
         <source>Post Storage Pid</source>

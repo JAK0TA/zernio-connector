@@ -15,19 +15,16 @@ class SocialMediaController extends ActionController {
 
   public function listAction(): ResponseInterface {
     $platform = $this->settings['platform'];
-    $template = $this->settings['template'];
-
-    $extConf = (array) $this->extensionConfiguration->get('zernio-connector');
-    $limit = intval($extConf['limit']);
+    $limit = intval($this->settings['limit']);
 
     $platforms = array_map('trim', explode(',', $platform));
     $postsByPlatform = [];
+
     foreach ($platforms as $platform) {
-      if ('start' == $template) {
-        $postsByPlatform[$platform] = $this->socialMediaRepository->findByTypeAndMedia($platform, 2);
-      } else {
-        $postsByPlatform[$platform] = $this->socialMediaRepository->findByTypeAndMedia($platform, $limit);
-      }
+      $postsByPlatform[$platform] = $this->socialMediaRepository->findByTypeAndMedia(
+        $platform,
+        $limit
+      );
     }
 
     $this->view->assign('platforms', $postsByPlatform);
