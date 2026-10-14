@@ -33,6 +33,24 @@
               <itemsProcFunc>JAKOTA\ZernioConnector\Utility\PlatformItemsProcFunc->getItems</itemsProcFunc>
             </config>
           </settings.platform>
+          <settings.respectSysLanguage>
+            <label>LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.respectSysLanguage</label>
+            <config>
+              <type>select</type>
+              <renderType>selectSingle</renderType>
+              <items>
+                <numIndex index="1">
+                  <numIndex index="0">LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.translate</numIndex>
+                  <numIndex index="1">1</numIndex>
+                </numIndex>
+                <numIndex index="2">
+                  <numIndex index="0">LLL:EXT:zernio-connector/Resources/Private/Language/locallang.xlf:socialmedia.extension.ignore</numIndex>
+                  <numIndex index="1">0</numIndex>
+                </numIndex>
+              </items>
+              <size>1</size>
+            </config>
+          </settings.respectSysLanguage>
         </el>
       </ROOT>
     </main>

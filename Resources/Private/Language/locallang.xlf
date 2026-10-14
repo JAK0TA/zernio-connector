@@ -73,6 +73,9 @@
       <trans-unit id="socialmedia.extension.socialwall" resname="socialmedia.extension.socialwall">
         <source>Social Wall</source>
       </trans-unit>
+      <trans-unit id="socialmedia.extension.respectSysLanguage" resname="socialmedia.extension.respectSysLanguage">
+        <source>Translation</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

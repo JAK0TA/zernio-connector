@@ -96,6 +96,18 @@
         <source>Social Wall</source>
         <target>Social Wall</target>
       </trans-unit>
+      <trans-unit id="socialmedia.extension.respectSysLanguage" resname="socialmedia.extension.respectSysLanguage">
+        <source>Translation</source>
+        <target>Übersetzung</target>
+      </trans-unit>
+      <trans-unit id="socialmedia.extension.translate" resname="socialmedia.extension.translate">
+        <source>Dont ignore Language</source>
+        <target>Sprache nicht ignorieren</target>
+      </trans-unit>
+      <trans-unit id="socialmedia.extension.ignore" resname="socialmedia.extension.ignore">
+        <source>Ignore Language</source>
+        <target>Sprache ignorieren</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
