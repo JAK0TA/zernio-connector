@@ -73,6 +73,15 @@
       <trans-unit id="socialmedia.extension.socialwall" resname="socialmedia.extension.socialwall">
         <source>Social Wall</source>
       </trans-unit>
+      <trans-unit id="socialmedia.extension.respectSysLanguage" resname="socialmedia.extension.respectSysLanguage">
+        <source>Translation</source>
+      </trans-unit>
+      <trans-unit id="socialmedia.extension.translate" resname="socialmedia.extension.translate">
+        <source>Dont ignore Language</source>
+      </trans-unit>
+      <trans-unit id="socialmedia.extension.ignore" resname="socialmedia.extension.ignore">
+        <source>Ignore Language</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

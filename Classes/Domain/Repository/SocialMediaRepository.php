@@ -29,8 +29,9 @@ class SocialMediaRepository extends Repository {
   /**
    * @return QueryResultInterface<int, SocialMedia>
    */
-  public function findByTypeAndMedia(string $platform, int $limit): QueryResultInterface {
+  public function findByTypeAndMedia(string $platform, int $limit, bool $respectSysLanguage = true): QueryResultInterface {
     $query = $this->createQuery();
+    $query->getQuerySettings()->setRespectSysLanguage($respectSysLanguage);
 
     $query->matching(
       $query->logicalAnd(
