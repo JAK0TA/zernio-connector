@@ -22,6 +22,7 @@
               <type>input</type>
               <size>10</size>
               <max>2</max>
+              <eval>int</eval>
             </config>
           </settings.limit>
           <settings.platform>
